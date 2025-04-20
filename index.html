@@ -3,183 +3,698 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axilock.ai - Advanced Security Solutions</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles/main.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#0F172A',
-                        accent: '#3B82F6',
-                    },
-                }
+    <title>Axilock.ai - AI-Powered Application Security</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --dark: #111827;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center; /* Added to align all items vertically */
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #0c4a6e, #0f172a);
+            color: white;
+            padding: 180px 0 100px; /* Increased top padding from 160px to 180px */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.3) 0%, rgba(15, 23, 42, 0) 70%);
+            transform: rotate(-45deg);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .features {
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-header p {
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        .how-it-works {
+            background-color: #f3f4f6;
+            padding: 100px 0;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 25px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+        }
+        
+        .step-content h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .step-content p {
+            color: var(--gray);
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .testimonials {
+            padding: 100px 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--gray-light);
+            margin-right: 15px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-weight: 600;
+        }
+        
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .footer-col p {
+            color: #d1d5db;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            
+            .hero {
+                padding: 150px 0 70px; /* Adjusted for mobile */
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-header h2 {
+                font-size: 28px;
+            }
+            
+            .feature-card, .testimonial-card {
+                padding: 20px;
+            }
+            
+            .steps {
+                padding: 0 20px;
             }
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .gradient-bg {
-                background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+        
+        /* Animation classes */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        
+        .slide-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.8s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
             }
-            .hover-scale {
-                transition: transform 0.3s ease;
+        }
+        
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
-            .hover-scale:hover {
-                transform: scale(1.05);
-            }
+        }
+        
+        /* Delay utilities */
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+        
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+        
+        .delay-3 {
+            animation-delay: 0.6s;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body class="bg-primary text-gray-100">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-primary/95 backdrop-blur-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-white">aXilock<span class="gradient-text">.ai</span></div>
-                <div class="hidden md:flex space-x-8" >
-                    <a href="#solutions" class="pd-top-5 hover:text-accent transition-colors">Solutions</a>
-                    <a href="#stats" class="pd-top-5 hover:text-accent transition-colors">Stats</a>
-                    <a href="#integrations" class="pd-top-5 hover:text-accent transition-colors">Integrations</a>
-                    <a href="#contact" class="bg-accent hover:bg-accent/90 px-6 py-2 rounded-lg transition-colors pulse-animation">Contact</a>
-                </div>
-                <button id="mobile-menu-button" class="md:hidden text-white">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-icon"><i class="fas fa-shield-alt"></i></span>
+                    Axilock.ai
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="#features">Solutions</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#" class="btn">Get Started</a></li>
+                    </ul>
+                </nav>
             </div>
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden py-4 mt-2">
-                <div class="flex flex-col space-y-4">
-                    <a href="#solutions" class="hover:text-accent transition-colors">Solutions</a>
-                    <a href="#stats" class="hover:text-accent transition-colors">Stats</a>
-                    <a href="#integrations" class="hover:text-accent transition-colors">Integrations</a>
-                    <a href="#contact" class="bg-accent hover:bg-accent/90 px-6 py-2 rounded-lg transition-colors text-center">Contact</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>AI-Powered Application Security That Works</h1>
+                <p>Full-proof secrets prevention and AI-based source code review for vulnerabilities at every pull request. Secure your application development lifecycle with Axilock.ai.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn">Request Demo</a>
+                    <a href="#" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <section class="gradient-bg min-h-screen flex items-center pt-20">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6">
-                    Secure Your Digital Future with <span class="gradient-text">AI-Powered</span> Protection
-                </h1>
-                <p class="text-xl text-gray-300 mb-8">
-                    Advanced security solutions powered by artificial intelligence to protect your business from evolving cyber threats.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="bg-accent hover:bg-accent/90 px-8 py-4 rounded-lg text-lg font-semibold transition-colors pulse-animation">
-                        Get Started
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header slide-up">
+                <h2>Our Core Security Solutions</h2>
+                <p>Axilock.ai provides two powerful AI-driven solutions to protect your applications throughout the development lifecycle.</p>
+            </div>
+            <div class="features-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 0 auto;">
+                <div class="feature-card slide-up delay-1" style="border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);">
+                    <div class="feature-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Full-Proof Secrets Prevention</h3>
+                    <p>Our system doesn't just detect secrets – it actively prevents them from entering your codebase in the first place. Unlike traditional solutions that only find secrets after they're committed, Axilock.ai ensures sensitive information never gets exposed in the first place.</p>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 15px; color: var(--gray);">
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 8px;"></i> Pre-commit protection across all environments</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 8px;"></i> Context-aware detection algorithms</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 8px;"></i> Customizable prevention policies</li>
+                    </ul>
+                </div>
+                <div class="feature-card slide-up delay-2" style="border-radius: 16px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);">
+                    <div class="feature-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>AI-Based Source Code Review</h3>
+                    <p>Our advanced AI analyzes every pull request for security vulnerabilities, providing real-time feedback and actionable recommendations to developers. The system works seamlessly with your existing workflow, checking code at every PR with no additional steps required.</p>
+                    <ul style="list-style-type: none; padding-left: 0; margin-top: 15px; color: var(--gray);">
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 8px;"></i> Comprehensive vulnerability detection</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 8px;"></i> Developer-friendly explanations and fixes</li>
+                        <li style="margin-bottom: 8px;"><i class="fas fa-check" style="color: var(--secondary); margin-right: 8px;"></i> Continuous learning from your codebase</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="section-header slide-up">
+                <h2>How Axilock.ai Works</h2>
+                <p>Our AI-powered security platform seamlessly integrates into your development workflow</p>
+            </div>
+            <div class="steps" style="max-width: 850px; margin: 50px auto 0;">
+                <div class="step slide-up" style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); margin-bottom: 30px;">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Simple Integration</h3>
+                        <p>Connect Axilock.ai to your repositories and CI/CD pipelines with our simple integration process. Takes just minutes to set up with no changes to your existing workflows.</p>
+                    </div>
+                </div>
+                <div class="step slide-up delay-1" style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); margin-bottom: 30px;">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Real-Time Protection</h3>
+                        <p>Our AI monitors development activity in real-time, preventing secrets from being committed and identifying security vulnerabilities as code is written or reviewed.</p>
+                    </div>
+                </div>
+                <div class="step slide-up delay-2" style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); margin-bottom: 30px;">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>AI-Powered Analysis</h3>
+                        <p>Advanced machine learning algorithms analyze your code for complex security patterns and potential vulnerabilities, going far beyond what traditional static analysis tools can detect.</p>
+                    </div>
+                </div>
+                <div class="step slide-up delay-3" style="background-color: white; border-radius: 20px; padding: 30px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); margin-bottom: 30px;">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Actionable Insights</h3>
+                        <p>Receive detailed recommendations and fixes directly in your pull requests, complete with explanation and educational context to help developers understand and address security issues.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-in">Ready to Secure Your Application Development?</h2>
+            <p class="fade-in delay-1">Join innovative companies that trust Axilock.ai to protect their code and prevent security vulnerabilities before they become problems.</p>
+            <a href="#" class="btn fade-in delay-2" style="background-color: white; color: var(--primary);">Schedule a Demo</a>
+        </div>
+    </section>
+
+    <!-- Testimonials section removed as requested -->
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-shield-alt"></i> Axilock.ai
                     </a>
-                    <a href="#solutions" class="border border-white/20 hover:border-accent px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
-                        Learn More
-                    </a>
+                    <p>AI-powered application security that prevents secrets exposure and detects vulnerabilities in your code before they become problems.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Security Guide</a></li>
+                        <li><a href="#">Webinars</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Our Core Solutions</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white/5 p-8 rounded-2xl float-animation">
-                    <i data-lucide="shield" class="w-12 h-12 text-accent mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-4">Threat Detection</h3>
-                    <p class="text-gray-400">Real-time monitoring and AI-powered threat detection to identify and neutralize security risks.</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-2xl float-animation">
-                    <i data-lucide="lock" class="w-12 h-12 text-accent mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-4">Access Control</h3>
-                    <p class="text-gray-400">Advanced authentication and authorization systems to secure your sensitive data.</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-2xl float-animation">
-                    <i data-lucide="eye" class="w-12 h-12 text-accent mb-6"></i>
-                    <h3 class="text-2xl font-semibold mb-4">Surveillance</h3>
-                    <p class="text-gray-400">24/7 intelligent monitoring and automated response systems for complete protection.</p>
-                </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Axilock.ai. All rights reserved.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section id="stats" class="py-20 bg-white/5">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-8 text-center">
-                <div class="hover-scale">
-                    <div class="text-4xl font-bold text-accent mb-2">99.9%</div>
-                    <div class="text-xl text-gray-400">Uptime Guarantee</div>
-                </div>
-                <!-- <div class="hover-scale">
-                    <div class="text-4xl font-bold text-accent mb-2">500+</div>
-                    <div class="text-xl text-gray-400">Enterprise Clients</div>
-                </div> -->
-                <div class="hover-scale">
-                    <div class="text-4xl font-bold text-accent mb-2">24/7</div>
-                    <div class="text-xl text-gray-400">Expert Support</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Integrations Section -->
-    <section id="integrations" class="py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16">Seamless Integrations</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white/5 p-8 rounded-2xl text-center shine-effect">
-                    <i data-lucide="cloud" class="w-12 h-12 text-accent mx-auto mb-6"></i>
-                    <h3 class="text-xl font-semibold">GitHub</h3>
-                </div>
-                <div class="bg-white/5 p-8 rounded-2xl text-center shine-effect">
-                    <i data-lucide="database" class="w-12 h-12 text-accent mx-auto mb-6"></i>
-                    <h3 class="text-xl font-semibold">GitLab</h3>
-                </div>
-                <div class="bg-white/5 p-8 rounded-2xl text-center shine-effect">
-                    <i data-lucide="hard-drive" class="w-12 h-12 text-accent mx-auto mb-6"></i>
-                    <h3 class="text-xl font-semibold">Bitbucket</h3>
-                </div>
-                <!-- <div class="bg-white/5 p-8 rounded-2xl text-center shine-effect">
-                    <i data-lucide="server" class="w-12 h-12 text-accent mx-auto mb-6"></i>
-                    <h3 class="text-xl font-semibold">Oracle Cloud</h3>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contact" class="py-20 gradient-bg">
-        <div class="container mx-auto px-6">
-            <div class="max-w-2xl mx-auto text-center">
-                <h2 class="text-4xl font-bold mb-8">Ready to Secure Your Business?</h2>
-                <p class="text-xl text-gray-300 mb-8">
-                    Get in touch with our security experts and discover how Axilock.ai can protect your digital assets.
-                </p>
-                <form class="max-w-md mx-auto">
-                    <input type="email" placeholder="Enter your email" class="w-full mb-4 px-6 py-4 rounded-lg bg-white/10 border border-white/20 focus:border-accent outline-none">
-                    <button type="submit" class="w-full bg-accent hover:bg-accent/90 px-8 py-4 rounded-lg text-lg font-semibold transition-colors pulse-animation">
-                        Get Started
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/10">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-            <p>&copy; 2025 Axilock.ai. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script>
-        lucide.createIcons();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simple animation trigger based on scroll
+            const animatedElements = document.querySelectorAll('.slide-up, .fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(element => {
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
