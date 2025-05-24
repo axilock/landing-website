@@ -1,4 +1,4 @@
-# Security Policy for AXILOCK
+# Security Policy for axilock
 # https://axilock.ai/.well-known/security.txt
 
 Contact: security@axilock.ai
@@ -14,10 +14,10 @@ Encryption: openpgp4fpr:1234567890ABCDEF1234567890ABCDEF12345678
 
 # Scope and Guidelines
 # Please report security vulnerabilities in:
-# - AXILOCK web application (app.axilock.ai)
-# - AXILOCK CLI tool and installers
-# - AXILOCK website (axilock.ai)
-# - AXILOCK API endpoints
+# - axilock web application (app.axilock.ai)
+# - axilock CLI tool and installers
+# - axilock website (axilock.ai)
+# - axilock API endpoints
 # - Third-party integrations and webhooks
 
 # Out of scope:
@@ -38,11 +38,11 @@ Encryption: openpgp4fpr:1234567890ABCDEF1234567890ABCDEF12345678
 # to understand and address security issues promptly.
 
 # Bug Bounty:
-# AXILOCK donot operate a public bug bountry program.
-# Eligible researchers with valid vulnerabilities will be rewarded with Axilock SWAG and Acknowledgment.
+# axilock donot operate a public bug bountry program.
+# Eligible researchers with valid vulnerabilities will be rewarded with axilock SWAG and Acknowledgment.
 
 # Safe Harbor:
-# AXILOCK supports safe harbor for security research conducted in
+# axilock supports safe harbor for security research conducted in
 # accordance with this policy. We will not pursue legal action
 # against researchers who:
 # - Make a good faith effort to avoid privacy violations
