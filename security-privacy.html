@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Policy - AXILOCK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-green: #00f078;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --border-color: #222222;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: var(--card-bg);
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .last-updated {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .policy-section {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-content {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-content h3 {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem 0;
+            font-weight: 600;
+        }
+
+        .section-content ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background: rgba(0, 240, 120, 0.1);
+            border: 1px solid rgba(0, 240, 120, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            color: var(--primary-green);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box p {
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .contact-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-green);
+            color: #000;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #00d968;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-green);
+            color: var(--primary-green);
+        }
+
+        .footer {
+            background: var(--card-bg);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+
+        .toc {
+            background: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .toc h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--primary-green);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .policy-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">AXILOCK</a>
+            <a href="/" class="nav-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Security Policy</h1>
+            <p>Our comprehensive approach to protecting user data, infrastructure, and maintaining the highest security standards.</p>
+        </div>
+
+        <div class="last-updated">
+            Last updated: January 2025
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#overview">1. Overview</a></li>
+                <li><a href="#data-security">2. Data Security</a></li>
+                <li><a href="#infrastructure">3. Infrastructure Security</a></li>
+                <li><a href="#access-controls">4. Access Controls</a></li>
+                <li><a href="#vulnerability">5. Vulnerability Management</a></li>
+                <li><a href="#incident-response">6. Incident Response</a></li>
+                <li><a href="#compliance">7. Compliance & Certifications</a></li>
+                <li><a href="#data-privacy">8. Data Privacy</a></li>
+            </ul>
+        </div>
+
+        <div class="policy-section" id="overview">
+            <h2 class="section-title">🛡️ Overview</h2>
+            <div class="section-content">
+                <p>At AXILOCK, security is fundamental to everything we do. As a company dedicated to preventing secret leaks and protecting sensitive data, we hold ourselves to the highest security standards.</p>
+                
+                <h3>Our Security Commitment</h3>
+                <ul>
+                    <li>Protect customer data with enterprise-grade security controls</li>
+                    <li>Maintain transparency about our security practices</li>
+                    <li>Continuously improve our security posture</li>
+                    <li>Respond promptly to security incidents and vulnerabilities</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Zero-Trust Architecture</h4>
+                    <p>AXILOCK operates on a zero-trust security model, where every access request is verified, encrypted, and monitored regardless of location or user credentials.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="policy-section" id="data-security">
+            <h2 class="section-title">🔐 Data Security</h2>
+            <div class="section-content">
+                <h3>Encryption</h3>
+                <ul>
+                    <li><strong>Data at Rest:</strong> All data is encrypted using AES-256 encryption</li>
+                    <li><strong>Data in Transit:</strong> TLS 1.2 encryption for all communications</li>
+                    <li><strong>Database Encryption:</strong> Full database encryption with rotating keys</li>
+                    <li><strong>Backup Encryption:</strong> All backups are encrypted and stored securely</li>
+                </ul>
+
+                <h3>Data Processing</h3>
+                <ul>
+                    <li>Local processing: Code analysis happens on user machines when possible</li>
+                    <li>Minimal data collection: We only collect data necessary for service functionality</li>
+                    <li>Secure deletion: Data is securely deleted when no longer needed</li>
+                    <li>Data segregation: Customer data is logically separated and isolated</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Secret Detection Privacy</h4>
+                    <p>AXILOCK's secret detection runs locally on your machine. Your source code never leaves your environment unless you explicitly choose cloud-based scanning.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="policy-section" id="infrastructure">
+            <h2 class="section-title">🏗️ Infrastructure Security</h2>
+            <div class="section-content">
+                <h3>Cloud Security</h3>
+                <ul>
+                    <li>Multi-cloud architecture across AWS, Google Cloud, and Azure</li>
+                    <li>Infrastructure as Code (IaC) with security scanning</li>
+                    <li>Network segmentation and VPC isolation</li>
+                    <li>Web Application Firewall (WAF) protection</li>
+                    <li>DDoS protection and rate limiting</li>
+                </ul>
+
+                <h3>Security Monitoring</h3>
+                <ul>
+                    <li>24/7 security monitoring and alerting</li>
+                    <li>Intrusion detection and prevention systems</li>
+                    <li>Real-time threat intelligence integration</li>
+                    <li>Comprehensive audit logging</li>
+                    <li>Automated security scanning and vulnerability assessment</li>
+                </ul>
+
+                <h3>Container Security</h3>
+                <ul>
+                    <li>Container image scanning for vulnerabilities</li>
+                    <li>Runtime security monitoring</li>
+                    <li>Minimal base images and regular updates</li>
+                    <li>Kubernetes security hardening</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section" id="access-controls">
+            <h2 class="section-title">🔑 Access Controls</h2>
+            <div class="section-content">
+                <h3>Employee Access</h3>
+                <ul>
+                    <li>Multi-factor authentication (MFA) required for all accounts</li>
+                    <li>Role-based access control (RBAC) with principle of least privilege</li>
+                    <li>Regular access reviews and deprovisioning</li>
+                    <li>Hardware security keys for high-privilege accounts</li>
+                    <li>Session monitoring and timeout policies</li>
+                </ul>
+
+                <h3>Customer Access</h3>
+                <ul>
+                    <li>Single Sign-On (SSO) integration support</li>
+                    <li>API key management with rotation capabilities</li>
+                    <li>Granular permission controls</li>
+                    <li>Session security and timeout management</li>
+                </ul>
+
+                <h3>Production Access</h3>
+                <ul>
+                    <li>Just-in-time access for production systems</li>
+                    <li>All production access logged and monitored</li>
+                    <li>Separate development and production environments</li>
+                    <li>Emergency access procedures with full audit trails</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section" id="vulnerability">
+            <h2 class="section-title">🔍 Vulnerability Management</h2>
+            <div class="section-content">
+                <h3>Vulnerability Disclosure Program</h3>
+                <ul>
+                    <li>Responsible disclosure process for security researchers</li>
+                    <li>Bug bounty program for eligible vulnerabilities</li>
+                    <li>Clear communication channels for security reports</li>
+                    <li>Safe harbor provisions for ethical security research</li>
+                </ul>
+
+                <h3>Vulnerability Assessment</h3>
+                <ul>
+                    <li>Regular penetration testing by third-party security firms</li>
+                    <li>Automated vulnerability scanning of all systems</li>
+                    <li>Code security reviews and static analysis</li>
+                    <li>Dependency scanning for third-party libraries</li>
+                </ul>
+
+                <h3>Remediation Process</h3>
+                <ul>
+                    <li>Critical vulnerabilities patched within 24 hours</li>
+                    <li>High-severity issues addressed within 72 hours</li>
+                    <li>Regular security updates and patch management</li>
+                    <li>Post-remediation verification and testing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="policy-section" id="incident-response">
+            <h2 class="section-title">🚨 Incident Response</h2>
+            <div class="section-content">
+                <h3>Incident Response Team</h3>
+                <ul>
+                    <li>Dedicated security incident response team</li>
+                    <li>24/7 incident response capability</li>
+                    <li>Clear escalation procedures and communication protocols</li>
+                    <li>Regular incident response training and simulations</li>
+                </ul>
+
+                <h3>Response Timeline</h3>
+                <ul>
+                    <li><strong>Detection:</strong> Real-time monitoring and alerting</li>
+                    <li><strong>Assessment:</strong> Initial triage within 30 minutes</li>
+                    <li><strong>Containment:</strong> Immediate action to prevent spread</li>
+                    <li><strong>Communication:</strong> Customer notification within 4 hours for material incidents</li>
+                    <li><strong>Recovery:</strong> Service restoration with full monitoring</li>
+                    <li><strong>Post-Incident:</strong> Root cause analysis and improvement plans</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <h4>Customer Communication</h4>
+                    <p>In the event of a security incident that may affect customer data, we commit to transparent and timely communication through our status page and direct customer notifications.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="policy-section" id="compliance">
+            <h2 class="section-title">📋 Compliance & Certifications</h2>
+            <div class="section-content">
+                <h3>Standards & Frameworks</h3>
+                <ul>
+                    <li><strong>SOC 2 Type II:</strong> Annual compliance audit</li>
+                    <li><strong>ISO 27001:</strong> Information security management certification</li>
+                    <li><strong>GDPR:</strong> Full compliance with EU data protection regulation</li>
+                    <li><strong>CCPA:</strong> California Consumer Privacy Act compliance</li>
+                    <li><strong>NIST Framework:</strong> Aligned with cybersecurity framework</li>
+                </ul>
+
+                <h3>Industry Standards</h3>
+                <ul>
+                    <li>OWASP security guidelines implementation</li>
+                    <li>CIS security benchmarks adherence</li>
+                    <li>Cloud security best practices (CSA)</li>
+                    <li>Regular third-party security assessments</li>
+                </ul>
+
+                <h3>Data Residency</h3>
+                <ul>
+                    <li>Customer data stored in specified geographic regions</li>
+                    <li>Cross-border data transfer protections</li>
+                    <li>Data processing agreements available</li>
+                </ul>
+            </div>
+        </div> -->
+
+        <div class="policy-section" id="data-privacy">
+            <h2 class="section-title">🔒 Data Privacy</h2>
+            <div class="section-content">
+                <h3>Privacy by Design</h3>
+                <ul>
+                    <li>Minimal data collection and retention policies</li>
+                    <li>Purpose limitation for data processing</li>
+                    <li>Customer data portability and deletion rights</li>
+                    <li>Transparent privacy practices and policies</li>
+                </ul>
+
+                <h3>Data Subject Rights</h3>
+                <ul>
+                    <li>Right to access personal data</li>
+                    <li>Right to rectification of inaccurate data</li>
+                    <li>Right to erasure ("right to be forgotten")</li>
+                    <li>Right to data portability</li>
+                    <li>Right to restrict processing</li>
+                </ul>
+
+                <h3>Data Retention</h3>
+                <ul>
+                    <li>Clear data retention schedules</li>
+                    <li>Automatic deletion of expired data</li>
+                    <li>Customer-controlled data retention settings</li>
+                    <li>Secure disposal of physical media</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Security Questions?</h2>
+            <p>Have questions about our security practices or need to report a security issue? Our security team is here to help.</p>
+            <a href="mailto:security@axilock.ai" class="btn-primary">Contact Security Team</a>
+            <a href="/security-acknowledgments.html" class="btn-outline">View Security Acknowledgments</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 AXILOCK. All rights reserved.</p>
+    </footer>
+</body>
+</html>

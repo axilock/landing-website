@@ -1,0 +1,53 @@
+# Security Policy for AXILOCK
+# https://axilock.ai/.well-known/security.txt
+
+Contact: security@axilock.ai
+Canonical: https://axilock.ai/.well-known/security.txt
+Preferred-Languages: en
+Policy: https://axilock.ai/security-policy.html
+Acknowledgments: https://axilock.ai/security-acknowledgments
+Hiring: https://axilock.ai/careers
+
+# PGP Key for encrypted communications
+Encryption: https://axilock.ai/.well-known/pgp-key.asc
+Encryption: openpgp4fpr:1234567890ABCDEF1234567890ABCDEF12345678
+
+# Scope and Guidelines
+# Please report security vulnerabilities in:
+# - AXILOCK web application (app.axilock.ai)
+# - AXILOCK CLI tool and installers
+# - AXILOCK website (axilock.ai)
+# - AXILOCK API endpoints
+# - Third-party integrations and webhooks
+
+# Out of scope:
+# - Social engineering attacks
+# - Physical security issues
+# - Attacks requiring physical access to user devices
+# - Issues in third-party applications or services
+# - Spam or denial of service attacks
+
+# Response Timeline:
+# - Initial acknowledgment: Within 72 hours
+# - Status update: Within 72 hours
+# - Resolution timeline: Communicated after initial assessment
+
+# Responsible Disclosure:
+# Please allow reasonable time for investigation and remediation
+# before public disclosure. We commit to working with researchers
+# to understand and address security issues promptly.
+
+# Bug Bounty:
+# AXILOCK donot operate a public bug bountry program.
+# Eligible researchers with valid vulnerabilities will be rewarded with Axilock SWAG and Acknowledgment.
+
+# Safe Harbor:
+# AXILOCK supports safe harbor for security research conducted in
+# accordance with this policy. We will not pursue legal action
+# against researchers who:
+# - Make a good faith effort to avoid privacy violations
+# - Do not access or modify user data beyond what is necessary
+# - Do not perform attacks that could harm our users or services
+# - Report vulnerabilities promptly and in good faith
+
+Expires: 2025-12-31T23:59:59.000Z
