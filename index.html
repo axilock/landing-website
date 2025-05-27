@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axilöck - Stop Secrets Before They Leak</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -214,6 +217,7 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
+
         .azure-icon {
             background: rgba(0, 120, 212, 0.1);
             color: #0078d4;
@@ -271,7 +275,7 @@
             border: 2px solid var(--primary-green);
             position: relative;
             z-index: 1;
-            
+
         }
 
         .glowing-input-wrapper:hover {
@@ -378,7 +382,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 20%, rgba(0, 240, 120, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgba(0, 240, 120, 0.05) 0%, transparent 50%);
             border-radius: 20px;
@@ -550,9 +554,17 @@
             border-radius: 50%;
         }
 
-        .terminal-btn.red { background: #ff5f57; }
-        .terminal-btn.yellow { background: #ffbd2e; }
-        .terminal-btn.green { background: #28ca42; }
+        .terminal-btn.red {
+            background: #ff5f57;
+        }
+
+        .terminal-btn.yellow {
+            background: #ffbd2e;
+        }
+
+        .terminal-btn.green {
+            background: #28ca42;
+        }
 
         .terminal-title {
             color: var(--text-secondary);
@@ -584,8 +596,16 @@
         }
 
         @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
         }
 
         /* Updated Setup Visual - Animated Checklist */
@@ -651,10 +671,12 @@
                 transform: scale(0.8);
                 box-shadow: 0 0 0 0 rgba(0, 240, 120, 0.4);
             }
+
             50% {
                 transform: scale(1.1);
                 box-shadow: 0 0 0 10px rgba(0, 240, 120, 0);
             }
+
             100% {
                 transform: scale(1);
                 box-shadow: 0 0 0 0 rgba(0, 240, 120, 0);
@@ -676,6 +698,7 @@
                 opacity: 0.6;
                 transform: translateX(-5px);
             }
+
             to {
                 opacity: 1;
                 transform: translateX(0);
@@ -900,7 +923,7 @@
             position: absolute;
             left: 0;
         }
-        
+
         .temprory-class-for-centre {
             width: 450px;
             margin: 0 auto;
@@ -977,7 +1000,7 @@
             .pricing-card.featured {
                 transform: none;
             }
-            
+
             .glowing-input-wrapper {
                 flex-direction: column;
                 border-radius: 15px;
@@ -1005,6 +1028,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -1017,8 +1041,15 @@
 
         /* Floating animation for metrics */
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .floating-metrics {
@@ -1026,6 +1057,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -1050,7 +1082,8 @@
             <div class="hero-content">
                 <h1>Stop Secrets <span class="highlight">Before They Leak</span></h1>
                 <p class="hero-subtitle">
-                    Axilöck installs on your dev machine and automatically blocks API keys, passwords, and sensitive data from reaching GitHub & Bitbucket
+                    Axilöck installs on your dev machine and automatically blocks API keys, passwords, and sensitive
+                    data from reaching GitHub & Bitbucket
                 </p>
                 <div class="hero-benefits">
                     <div class="benefit-item">Installs in seconds on any laptop</div>
@@ -1063,7 +1096,8 @@
                         <div class="platform-item">
                             <div class="platform-icon github-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                                 </svg>
                             </div>
                             <span>GitHub</span>
@@ -1071,7 +1105,8 @@
                         <div class="platform-item">
                             <div class="platform-icon gitlab-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 21.62l-3.684-11.333h7.368L12 21.62zM12 21.62L8.316 10.287H1.895L12 21.62zM1.895 10.287l-.948 2.915a.821.821 0 00.298 1.018L12 21.62l-10.105-11.333zM1.895 10.287h6.421L5.737 2.414a.411.411 0 00-.78 0L1.895 10.287zM12 21.62l3.684-11.333h6.421L12 21.62zM22.105 10.287l.948 2.915a.821.821 0 01-.298 1.018L12 21.62l10.105-11.333zM22.105 10.287h-6.421l2.579-7.873a.411.411 0 01.78 0l3.062 7.873z"/>
+                                    <path
+                                        d="M12 21.62l-3.684-11.333h7.368L12 21.62zM12 21.62L8.316 10.287H1.895L12 21.62zM1.895 10.287l-.948 2.915a.821.821 0 00.298 1.018L12 21.62l-10.105-11.333zM1.895 10.287h6.421L5.737 2.414a.411.411 0 00-.78 0L1.895 10.287zM12 21.62l3.684-11.333h6.421L12 21.62zM22.105 10.287l.948 2.915a.821.821 0 01-.298 1.018L12 21.62l10.105-11.333zM22.105 10.287h-6.421l2.579-7.873a.411.411 0 01.78 0l3.062 7.873z" />
                                 </svg>
 
                             </div>
@@ -1080,7 +1115,8 @@
                         <div class="platform-item">
                             <div class="platform-icon bitbucket-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M.778 1.213a.768.768 0 00-.768.892l3.263 19.81c.084.5.515.868 1.022.873H19.95a.772.772 0 00.77-.646l3.27-20.03a.768.768 0 00-.768-.891zM14.52 15.53H9.522L8.17 8.466h7.561z"/>
+                                    <path
+                                        d="M.778 1.213a.768.768 0 00-.768.892l3.263 19.81c.084.5.515.868 1.022.873H19.95a.772.772 0 00.77-.646l3.27-20.03a.768.768 0 00-.768-.891zM14.52 15.53H9.522L8.17 8.466h7.561z" />
                                 </svg>
                             </div>
                             <span>Bitbucket</span>
@@ -1088,7 +1124,8 @@
                         <div class="platform-item">
                             <div class="platform-icon azure-icon">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M0 10.802l4.24-7.365L13.469.637l-8.758 16.09L0 10.802zm8.073 2.387L16.034 3.23l7.967 7.366v6.61L8.073 13.189z"/>
+                                    <path
+                                        d="M0 10.802l4.24-7.365L13.469.637l-8.758 16.09L0 10.802zm8.073 2.387L16.034 3.23l7.967 7.366v6.61L8.073 13.189z" />
                                 </svg>
                             </div>
                             <span>Azure</span>
@@ -1108,7 +1145,8 @@
                 </p>
             </div>
             <div class="hero-visual">
-                <img src="hero.svg" style="padding: 0px; margin: 0px; width: 130%; height: 130%; object-fit: contain;" />
+                <img src="hero.svg"
+                    style="padding: 0px; margin: 0px; width: 130%; height: 130%; object-fit: contain;" />
                 <!-- Floating Metrics -->
                 <div class="floating-metrics metric-1">Real-time Secret Scanning</div>
             </div>
@@ -1156,7 +1194,8 @@
                         </div>
                     </div>
                     <div class="setup-description">
-                        One command magically installs Axilöck and seamlessly integrates with your Git workflow. No configuration needed - everything happens automatically.
+                        One command magically installs Axilöck and seamlessly integrates with your Git workflow. No
+                        configuration needed - everything happens automatically.
                     </div>
                 </div>
 
@@ -1164,7 +1203,8 @@
                     <div class="step-number">2</div>
                     <h3>Instant Protection</h3>
                     <div class="setup-description">
-                        Every <code>git push</code> is now automatically scanned and protected. Axilöck detects and blocks secrets in real-time before they reach your repository.
+                        Every <code>git push</code> is now automatically scanned and protected. Axilöck detects and
+                        blocks secrets in real-time before they reach your repository.
                     </div>
                     <div class="interactive-terminal">
                         <div class="terminal-header">
@@ -1197,7 +1237,8 @@
         <div class="container">
             <div class="section-header">
                 <h2>The Secret Leak Crisis</h2>
-                <p>Sensitive data is accidentally exposed to public repositories every day, creating massive security risks</p>
+                <p>Sensitive data is accidentally exposed to public repositories every day, creating massive security
+                    risks</p>
             </div>
             <div class="problem-stats">
                 <div class="stat-card">
@@ -1227,12 +1268,14 @@
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h3>Zero False Positives</h3>
-                    <p>Advanced pattern recognition ensures only real secrets are flagged, eliminating developer frustration.</p>
+                    <p>Advanced pattern recognition ensures only real secrets are flagged, eliminating developer
+                        frustration.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>Lightning Fast</h3>
-                    <p>15ms average scan time means no interruption to your workflow. Code, commit, push with confidence.</p>
+                    <p>15ms average scan time means no interruption to your workflow. Code, commit, push with
+                        confidence.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
@@ -1364,7 +1407,7 @@
     <script>
         // Interactive Terminal Demo
         let demoRunning = false;
-        
+
         function typeText(element, text, speed = 100) {
             return new Promise((resolve) => {
                 let i = 0;
@@ -1389,29 +1432,29 @@
 
         async function runTerminalDemo() {
             if (demoRunning) return;
-            
+
             demoRunning = true;
             const inputElement = document.getElementById('demo-input');
             const outputElement = document.getElementById('demo-output');
             const cursorElement = document.getElementById('demo-cursor');
             const restartBtn = document.getElementById('restart-demo');
-            
+
             if (restartBtn) {
                 restartBtn.disabled = true;
                 restartBtn.textContent = 'Running...';
             }
-            
+
             // Reset
             inputElement.textContent = '';
             outputElement.innerHTML = '';
             cursorElement.style.display = 'inline-block';
-            
+
             // Type the command
             await typeText(inputElement, 'git push', 120);
-            
+
             // Hide cursor and show output
             cursorElement.style.display = 'none';
-            
+
             const axiOutput = `
                 <div class="axilock-header">======== AXILOCK PUSH PROTECTION ========</div>
                 <div style="color: var(--text-secondary); margin: 1rem 0;">
@@ -1428,9 +1471,9 @@
                 </div>
                 <div class="error-message">error: failed to push some refs to 'github.com/backend/src/config.yml'</div>
             `;
-            
+
             await showOutput(outputElement, axiOutput);
-            
+
             if (restartBtn) {
                 restartBtn.disabled = false;
                 restartBtn.textContent = '▶ Watch Again';
@@ -1441,7 +1484,7 @@
         // Animated Setup Checklist
         function animateSetupChecklist() {
             const setupItems = document.querySelectorAll('#setup-checklist .setup-item');
-            
+
             setupItems.forEach((item, index) => {
                 setTimeout(() => {
                     item.classList.add('completed');
@@ -1457,11 +1500,11 @@
             });
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const restartBtn = document.getElementById('restart-demo');
             if (restartBtn) {
                 restartBtn.addEventListener('click', runTerminalDemo);
-                
+
                 // Auto-run demo when it comes into view
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
@@ -1470,7 +1513,7 @@
                         }
                     });
                 }, { threshold: 0.5 });
-                
+
                 const demoElement = document.getElementById('interactive-demo');
                 if (demoElement) {
                     observer.observe(demoElement);
@@ -1486,21 +1529,21 @@
                     }
                 });
             }, { threshold: 0.6 });
-            
+
             const setupChecklist = document.getElementById('setup-checklist');
             if (setupChecklist) {
                 setupObserver.observe(setupChecklist);
             }
-            
+
             // Email validation and form handling
             const emailInput = document.querySelector('.email-input');
             const demoButton = document.querySelector('.demo-button');
-            
+
             if (emailInput && demoButton) {
-                demoButton.addEventListener('click', function() {
+                demoButton.addEventListener('click', function () {
                     const email = emailInput.value.trim();
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    
+
                     if (!email || !emailRegex.test(email)) {
                         emailInput.style.borderColor = '#ff3b30';
                         emailInput.style.backgroundColor = 'rgba(255, 59, 48, 0.1)';
@@ -1515,10 +1558,24 @@
                         demoButton.style.backgroundColor = '#00d968';
                         emailInput.disabled = true;
                         demoButton.disabled = true;
-                        
+                        // send email to api.
+                        fetch('https://api.axilock.ai/v1/inbound', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ "email": email })
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('Email submitted:', data);
+                            })
+                            .catch(error => {
+                                console.error('Error submitting email:', error);
+                            });
                         // In a real implementation, you would send the email to your server here
                         console.log('Email submitted:', email);
-                        
+
                         // Reset after 3 seconds
                         setTimeout(() => {
                             demoButton.textContent = 'Book a Demo';
@@ -1576,4 +1633,5 @@
         });
     </script>
 </body>
+
 </html>
