@@ -9,6 +9,6 @@ matrix:
       ignore-strings: true
       filters:
         - html
-      word-lists:
+      wordlists:
         - .spelling-words.txt
 
