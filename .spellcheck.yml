@@ -1,14 +1,17 @@
 matrix:
-  - name: HTML Files
-    sources:
-      - '**/*.html'
-    spelling:
-      language: en_US
-      dictionary: en_US
-      ignore-comments: false
-      ignore-strings: true
-      filters:
-        - html
-      wordlists:
-        - .spelling-words.txt
-
+- name: HTML
+  aspell:
+    lang: en
+  dictionary:
+    wordlists:
+    - .wordlist.txt
+    encoding: utf-8
+  pipeline:
+  - pyspelling.filters.html:
+      comments: false
+      ignores:
+      - code
+      - pre
+  sources:
+  - '**/*.html'
+  default_encoding: utf-8
