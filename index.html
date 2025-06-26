@@ -1558,22 +1558,18 @@
                         emailInput.disabled = true;
                         demoButton.disabled = true;
                         // send email to api.
-                        fetch('https://api.axilock.ai/v1/inbound', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ "email": email })
-                        })
-                            .then(response => response.json())
-                            .then(data => {
-                                window.location.href = 'https://cal.com/axilock/support?email=' + email;
-                            })
-                            .catch(error => {
-                                console.error('Error submitting email:', error);
-                            });
-                        // In a real implementation, you would send the email to your server here
-                        console.log('Email submitted:', email);
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = 'https://api.axilock.ai/v1/inbound';
+                        form.style.display = 'none';
+
+                        const input = document.createElement('input');
+                        input.name = 'email';
+                        input.value = email;
+                        form.appendChild(input);
+
+                        document.body.appendChild(form);
+                        form.submit();
 
                         // Reset after 3 seconds
                         setTimeout(() => {
