@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axilöck - Stop Secrets Before They Leak</title>
+    <title>Axilöck - Open Source Secret Detection</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
@@ -1071,7 +1071,7 @@
                 <li><a href="https://cal.com/axilock/support">Contact</a></li>
             </ul>
             <div class="nav-buttons">
-                <a href="https://app.axilock.ai" class="btn-primary">Get Started</a>
+                <a href="https://github.com/axilock" class="btn-primary">Get Started</a>
             </div>
         </div>
     </nav>
@@ -1080,9 +1080,9 @@
     <section class="hero" id="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Stop Secrets <span class="highlight">Before They Leak</span></h1>
+                <h1>Open Source <span class="highlight">Secret Detection</span></h1>
                 <p class="hero-subtitle">
-                    Axilöck installs on your dev machine and automatically blocks API keys, passwords, and sensitive
+                    Axilöck is an open source tool that installs on your dev machine and automatically blocks API keys, passwords, and sensitive
                     data from reaching GitHub & Bitbucket
                 </p>
                 <div class="hero-benefits">
@@ -1136,12 +1136,12 @@
                     <div class="glowing-input-container">
                         <div class="glowing-input-wrapper">
                             <input type="email" class="email-input" placeholder="Enter your email" onkeydown="if(event.key === 'Enter') { document.querySelector('.demo-button').click(); }" />
-                            <button class="demo-button">Book a Demo</button>
+                            <button class="demo-button">Join Community</button>
                         </div>
                     </div>
                 </div>
                 <p class="trust-indicator">
-                    <strong>Early Access</strong> - Join developers already testing Axilöck
+                    <strong>Community-Driven</strong> - Join developers already contributing to Axilöck
                 </p>
             </div>
             <div class="hero-visual">
@@ -1305,8 +1305,8 @@
     <section class="section" id="pricing">
         <div class="container">
             <div class="section-header">
-                <h2>Simple, Transparent Pricing</h2>
-                <p>Choose the plan that fits your team size and security needs</p>
+                <h2>Open Source</h2>
+                <p>Axilöck is community-driven and open source for everyone</p>
             </div>
             <div class="pricing-cards">
                 <!-- <div class="pricing-card">
@@ -1335,17 +1335,16 @@
                     <a href="#" class="btn-primary">Start 30-Day Trial</a>
                 </div> -->
                 <div class="pricing-card featured temprory-class-for-centre">
-                    <h3>Enterprise</h3>
-                    <div class="price">Custom</div>
-                    <p class="price-period">For large organizations</p>
+                    <h3>Community</h3>
+                    <div class="price">Open Source</div>
+                    <p class="price-period">For everyone</p>
                     <ul class="feature-list">
-                        <!-- <li>Everything in Team</li> -->
-                        <li>SSO integration</li>
-                        <li>Compliance reporting</li>
-                        <li>Dedicated support</li>
-                        <li>Custom integrations</li>
+                        <li>Full source code access</li>
+                        <li>Community support</li>
+                        <li>Unlimited usage</li>
+                        <li>Contribute and extend</li>
                     </ul>
-                    <a href="https://cal.com/axilock/support" class="btn-outline">Contact Sales</a>
+                    <a href="https://github.com/axilock" class="btn-outline">View on GitHub</a>
                 </div>
             </div>
         </div>
@@ -1356,11 +1355,11 @@
         <div class="container">
             <h2>Ready to Protect Your Repositories?</h2>
             <p style="font-size: 1.2rem; color: var(--text-secondary); margin: 1rem 0 2rem;">
-                Be among the first developers to never leak secrets again
+                Join the open source community and never leak secrets again
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="#hero" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Free Trial</a>
-                <a href="#hero" class="btn-outline" style="font-size: 1.1rem; padding: 1rem 2rem;">Schedule Demo</a>
+                <a href="https://github.com/axilock" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Download Now</a>
+                <a href="https://github.com/axilock/contribute" class="btn-outline" style="font-size: 1.1rem; padding: 1rem 2rem;">Contribute</a>
             </div>
         </div>
     </section>
@@ -1554,14 +1553,14 @@
                     } else {
                         // here send email to an api fetch(site.com/?email=email).then(...)
                         // Success animation
-                        demoButton.textContent = '✓ Submitted';
+                        demoButton.textContent = '✓ Joined';
                         demoButton.style.backgroundColor = '#00d968';
                         emailInput.disabled = true;
                         demoButton.disabled = true;
                         // send email to api.
                         const form = document.createElement('form');
                         form.method = 'POST';
-                        form.action = 'https://api.axilock.ai/v1/inbound';
+                        form.action = 'https://community.axilock.ai/join';
                         form.style.display = 'none';
 
                         const input = document.createElement('input');
@@ -1574,7 +1573,7 @@
 
                         // Reset after 3 seconds
                         setTimeout(() => {
-                            demoButton.textContent = 'Book a Demo';
+                            demoButton.textContent = 'Join Community';
                             demoButton.style.backgroundColor = '';
                             emailInput.disabled = false;
                             demoButton.disabled = false;
